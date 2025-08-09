@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 2a464d89f0303fa438375f2b440e4114
+guid: 0f791a0aa7361074eac4e3e2693766cb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8420485207997377320
-    second: images (2)_0
+      213: 8087461874501157582
+    second: enemig_walk_0
+  - first:
+      213: 4590422931734336214
+    second: enemig_walk_1
+  - first:
+      213: 2596550110656035211
+    second: enemig_walk_2
+  - first:
+      213: -526249747694508399
+    second: enemig_walk_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +46,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +60,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +84,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,23 +148,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: images (2)_0
+      name: enemig_walk_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 300
-        height: 168
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82b6d1bdea29bd470800000000000000
-      internalID: 8420485207997377320
+      spriteID: ec20824c9bf6c3070800000000000000
+      internalID: 8087461874501157582
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemig_walk_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6d215d6d55574bf30800000000000000
+      internalID: 4590422931734336214
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemig_walk_2
+      rect:
+        serializedVersion: 2
+        x: 100
+        y: 0
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b89772b819cc80420800000000000000
+      internalID: 2596550110656035211
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemig_walk_3
+      rect:
+        serializedVersion: 2
+        x: 150
+        y: 0
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 196a78584a262b8f0800000000000000
+      internalID: -526249747694508399
       vertices: []
       indices: 
       edges: []
@@ -164,7 +239,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 53ca57a157c686047b74f2692f071546
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +249,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      images (2)_0: 8420485207997377320
+      enemig_walk_0: 8087461874501157582
+      enemig_walk_1: 4590422931734336214
+      enemig_walk_2: 2596550110656035211
+      enemig_walk_3: -526249747694508399
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

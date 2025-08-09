@@ -1,10 +1,13 @@
 fileFormatVersion: 2
-guid: 2a464d89f0303fa438375f2b440e4114
+guid: 47b8a05ec86da1a4fac83ab63cbe40de
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8420485207997377320
-    second: images (2)_0
+      213: 1617004695979393580
+    second: enemy_idle_0
+  - first:
+      213: -266049441143215253
+    second: enemy_idle_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -37,7 +40,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-    filterMode: 1
+    filterMode: 0
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -51,7 +54,7 @@ TextureImporter:
   spriteMeshType: 1
   alignment: 0
   spritePivot: {x: 0.5, y: 0.5}
-  spritePixelsToUnits: 100
+  spritePixelsToUnits: 25
   spriteBorder: {x: 0, y: 0, z: 0, w: 0}
   spriteGenerateFallbackPhysicsShape: 1
   alphaUsage: 1
@@ -75,7 +78,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-    textureCompression: 1
+    textureCompression: 0
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -139,23 +142,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: images (2)_0
+      name: enemy_idle_0
       rect:
         serializedVersion: 2
         x: 0
         y: 0
-        width: 300
-        height: 168
-      alignment: 0
-      pivot: {x: 0, y: 0}
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 82b6d1bdea29bd470800000000000000
-      internalID: 8420485207997377320
+      spriteID: c228df72431c07610800000000000000
+      internalID: 1617004695979393580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: enemy_idle_1
+      rect:
+        serializedVersion: 2
+        x: 50
+        y: 0
+        width: 50
+        height: 50
+      alignment: 7
+      pivot: {x: 0.5, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b6ba7ff517dce4cf0800000000000000
+      internalID: -266049441143215253
       vertices: []
       indices: 
       edges: []
@@ -164,7 +189,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 580448a89fa1e75419d308c5a3c49907
     internalID: 0
     vertices: []
     indices: 
@@ -174,7 +199,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      images (2)_0: 8420485207997377320
+      enemy_idle_0: 1617004695979393580
+      enemy_idle_1: -266049441143215253
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
