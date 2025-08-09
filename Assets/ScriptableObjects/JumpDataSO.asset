@@ -15,5 +15,5 @@ MonoBehaviour:
   _jumpForce: 7
   _extraJumps: 0
   _cancelJumpMultiplier: 0.75
-  _gravityMultiplier: 4
+  _gravityMultiplier: 3
   _jumpDiscounter: 10

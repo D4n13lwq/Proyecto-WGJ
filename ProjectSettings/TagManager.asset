@@ -44,5 +44,8 @@ TagManager:
   - name: Player
     uniqueID: 347600599
     locked: 0
+  - name: NoLight
+    uniqueID: 847638117
+    locked: 0
   m_RenderingLayers:
   - Default
