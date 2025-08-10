@@ -10320,7 +10320,7 @@ SpriteRenderer:
   m_Size: {x: 2, y: 2}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
-  m_WasSpriteAssigned: 0
+  m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
 --- !u!4 &410914917
@@ -10939,6 +10939,10 @@ PrefabInstance:
     - target: {fileID: 4574518703615389960, guid: cc45e23d24e23604bb6977ffe0bd7afa, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6324555546045987415, guid: cc45e23d24e23604bb6977ffe0bd7afa, type: 3}
+      propertyPath: m_Enabled
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 9088196420615009796, guid: cc45e23d24e23604bb6977ffe0bd7afa, type: 3}
       propertyPath: falsePlayerDeath
@@ -43987,6 +43991,14 @@ PrefabInstance:
     - target: {fileID: 2798368170630822510, guid: f772df83c7c73244789416ef4f6018b3, type: 3}
       propertyPath: m_Name
       value: Canvas
+      objectReference: {fileID: 0}
+    - target: {fileID: 2798368170630822510, guid: f772df83c7c73244789416ef4f6018b3, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2860481835100557632, guid: f772df83c7c73244789416ef4f6018b3, type: 3}
+      propertyPath: m_VertexColorAlwaysGammaSpace
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 5087542778513680209, guid: f772df83c7c73244789416ef4f6018b3, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target

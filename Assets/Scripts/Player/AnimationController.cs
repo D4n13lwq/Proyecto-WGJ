@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEditorInternal;
 using UnityEngine;
 
@@ -7,11 +8,15 @@ public class AnimationController : MonoBehaviour
     [SerializeField] GameObject falsePlayerDeath;
     Animator animator;
     Rigidbody2D rb;
+    SpriteRenderer spriteRenderer;
+    PlayerMovement PlayerMovement;
 
     private void Awake()
     {
         animator = GetComponent<Animator>();
         rb = GetComponent<Rigidbody2D>();
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        PlayerMovement = GetComponent<PlayerMovement>();
     }
 
     private void Update()
@@ -28,7 +33,16 @@ public class AnimationController : MonoBehaviour
             falsePlayerDeath.transform.position = transform.position;
             falsePlayerDeath.transform.rotation = transform.rotation;
             falsePlayerDeath.SetActive(true);
-            gameObject.SetActive(false);
+            spriteRenderer.enabled = false;
+            PlayerMovement.enabled = false;
+            rb.linearVelocity = Vector3.zero;
+            StartCoroutine(PIPIPI());
         }
+    }
+
+    IEnumerator PIPIPI()
+    {
+        yield return new WaitForSeconds(1.2f);
+        UiManager.Instance.GameOver();
     }
 }
