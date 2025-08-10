@@ -2,11 +2,15 @@ using UnityEngine;
 
 public class PlayerDeath : MonoBehaviour
 {
-    private void OnTriggerEnter2D(Collider2D collision)
+    // Start is called once before the first execution of Update after the MonoBehaviour is created
+    void Start()
     {
-        if (collision.TryGetComponent<I_Enemy>(out I_Enemy enemy))
-        {
+        
+    }
 
-        }
+    // Update is called once per frame
+    void Update()
+    {
+        
     }
 }
