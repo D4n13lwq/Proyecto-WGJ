@@ -1,3 +1,4 @@
+using UnityEditorInternal;
 using UnityEngine;
 
 public class AnimationController : MonoBehaviour
@@ -17,5 +18,15 @@ public class AnimationController : MonoBehaviour
         animator.SetBool("OnGround", groundDetector.DetectGround());
         animator.SetFloat("RbYVelocity", rb.linearVelocityY);
         animator.SetBool("OnMovement", rb.linearVelocityX != 0);
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+        if(collision.TryGetComponent<I_Enemy>(out I_Enemy enemy))
+        {
+            animator.SetTrigger("Die");
+            rb.linearVelocity = Vector2.zero;
+            Debug.Log("xd");
+        }
     }
 }
