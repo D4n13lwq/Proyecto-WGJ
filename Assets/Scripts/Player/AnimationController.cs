@@ -4,6 +4,7 @@ using UnityEngine;
 public class AnimationController : MonoBehaviour
 {
     [SerializeField] GroundDetector groundDetector;
+    [SerializeField] GameObject falsePlayerDeath;
     Animator animator;
     Rigidbody2D rb;
 
@@ -24,9 +25,10 @@ public class AnimationController : MonoBehaviour
     {
         if(collision.TryGetComponent(out I_Enemy enemy))
         {
-            animator.SetTrigger("Die");
-            rb.linearVelocity = Vector2.zero;
-            Debug.Log("xd");
+            falsePlayerDeath.transform.position = transform.position;
+            falsePlayerDeath.transform.rotation = transform.rotation;
+            falsePlayerDeath.SetActive(true);
+            gameObject.SetActive(false);
         }
     }
 }

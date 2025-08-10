@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour, I_Enemy
     internal Rigidbody2D rigid;
     internal Collider2D coll;
 
-    [SerializeField] private Attack attack = new();
+    [SerializeField] private Attack attack;
     
     public List<GameObject> parts { get; set; } = new();
     
