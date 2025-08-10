@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour, I_Enemy
     internal Rigidbody2D rigid;
     internal Collider2D coll;
 
-    [SerializeField] private Attack attack;
+    [SerializeField] internal Attack attack;
     
     public List<GameObject> parts { get; set; } = new();
     
@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour, I_Enemy
     
     [SerializeField] private float dot_Product;
     private Vector2 dir;
-    [SerializeField] private Vector2 dis;
+    [SerializeField] internal Vector2 dis;
 
     [SerializeField] private Vector2 distance_To_Detect;
 
@@ -32,7 +32,7 @@ public class Enemy : MonoBehaviour, I_Enemy
         for (int i = 0; i < transform.childCount; i++)
         {
             GameObject go = transform.GetChild(i).gameObject;
-            parts.Add(go);
+            if (go != attack.circle_Pos.gameObject) parts.Add(go);
         }
         
         Unlighted();
@@ -57,6 +57,12 @@ public class Enemy : MonoBehaviour, I_Enemy
             part.GetComponent<Rigidbody2D>().linearVelocity = rigid.linearVelocity;
         }
     }
+
+    internal virtual void Attack()
+    {
+        Debug.Log("Atack_E");
+        attack.Do_Attack();
+    }
     
     private void Flip()
     {
@@ -76,6 +82,7 @@ public class Enemy : MonoBehaviour, I_Enemy
         
         foreach (var part in parts)
         {
+            part.GetComponent<SpriteRenderer>().enabled = true;
             part.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             part.GetComponent<Collider2D>().enabled = true;
             part.GetComponent<Rigidbody2D>().gravityScale = 1;
@@ -93,6 +100,7 @@ public class Enemy : MonoBehaviour, I_Enemy
         
         foreach (var part in parts)
         {
+            part.GetComponent<SpriteRenderer>().enabled = false;
             part.GetComponent<Collider2D>().enabled = false;
             part.GetComponent<Rigidbody2D>().gravityScale = 0;
         }

@@ -12,6 +12,6 @@ public class PlayerDeath : MonoBehaviour
 
     public void Death()
     {
-        anim.SetTrigger("Die");
+        anim.SetTrigger("Died");
     }
 }
