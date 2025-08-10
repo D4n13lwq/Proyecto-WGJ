@@ -21,8 +21,10 @@ public class Flashlight : MonoBehaviour
     {
         playerControls.InputSystem.Player.Attack.performed -= TurnOnFlashlight;
         playerControls.InputSystem.Player.Attack.canceled -= TurnOffFlashlight;
+        TurnOffFlashlight();
     }
 
     void TurnOnFlashlight(InputAction.CallbackContext context) => flashlightObject.SetActive(true);
     void TurnOffFlashlight(InputAction.CallbackContext context) => flashlightObject.SetActive(false);
+    void TurnOffFlashlight() => flashlightObject.SetActive(false);
 }
