@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using Unity.Cinemachine;
 using UnityEngine;
 
@@ -5,6 +6,7 @@ public class Switch : MonoBehaviour
 {
     [SerializeField] Sprite switchOn;
     [SerializeField] Sprite switchOff;
+    [SerializeField] List<GameObject> objects; //Objetos que van a cambiar de apagados a prendidos o viceversa
 
     private SpriteRenderer switchRenderer;
     private void Awake()
@@ -19,6 +21,10 @@ public class Switch : MonoBehaviour
 
             Debug.Log("prendido");
             //Aqui pueden poner la siguiente logica cuando prenda la luz.
+            foreach (GameObject obj in objects)
+            {
+                obj.SetActive(!obj.activeSelf);
+            }
         }
     }
 }
