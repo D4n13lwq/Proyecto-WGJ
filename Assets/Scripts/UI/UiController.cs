@@ -48,4 +48,14 @@ public class Ui : MonoBehaviour
     {
         return gamepanel.activeSelf;
     }
+
+    public bool IsPausePanelActive()
+    {
+        return panelpause.activeSelf;
+    }
+
+    public bool IsStartPanelActive()
+    {
+        return startpanel.activeSelf;
+    }
 }

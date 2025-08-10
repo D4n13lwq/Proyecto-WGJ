@@ -22,7 +22,7 @@ public class AnimationController : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
-        if(collision.TryGetComponent<I_Enemy>(out I_Enemy enemy))
+        if(collision.TryGetComponent(out I_Enemy enemy))
         {
             animator.SetTrigger("Die");
             rb.linearVelocity = Vector2.zero;

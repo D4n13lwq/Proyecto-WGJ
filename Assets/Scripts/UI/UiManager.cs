@@ -10,7 +10,6 @@ public class UiManager : MonoBehaviour
     public event Gamemenu Ev_continueGame;
 
     public static UiManager Instance;
-    [SerializeField] int actualLevel;
 
     void Awake()
     {
@@ -21,15 +20,6 @@ public class UiManager : MonoBehaviour
         else
         {
             Destroy(gameObject);
-        }
-      
-    }
-
-    private void Update()
-    {
-        if (Input.anyKeyDown)
-        {
-            StartGame();
         }
     }
 
@@ -55,10 +45,11 @@ public class UiManager : MonoBehaviour
         SceneManager.LoadScene(0);
     }
 
-    public void ResetActualLevel()
-    {
-        SceneManager.LoadScene(actualLevel);
-    }
+    //public void RestartLevel()
+    //{
+    //    PlayerPrefs.SetInt("restart", 1);
+    //    SceneManager.LoadScene(0);
+    //}
 
     public void ContinueGame()
     {

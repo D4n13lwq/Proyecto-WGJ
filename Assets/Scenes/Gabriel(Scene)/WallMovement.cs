@@ -37,6 +37,7 @@ public class MoverPared : MonoBehaviour
         if (collision.CompareTag("Player"))
         {
             //Poner función para matar al niño!
+            //Aun no hay fincion para matar al niño :(
         }
     }
 
