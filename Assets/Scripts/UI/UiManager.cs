@@ -25,6 +25,14 @@ public class UiManager : MonoBehaviour
       
     }
 
+    private void Update()
+    {
+        if (Input.anyKeyDown)
+        {
+            StartGame();
+        }
+    }
+
     private void Start()
     {
         Time.timeScale = 0;

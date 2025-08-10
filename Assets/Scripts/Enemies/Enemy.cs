@@ -6,6 +6,8 @@ public class Enemy : MonoBehaviour, I_Enemy
 {
     internal Rigidbody2D rigid;
     internal Collider2D coll;
+
+    [SerializeField] private Attack attack = new();
     
     public List<GameObject> parts { get; set; } = new();
     
@@ -17,6 +19,8 @@ public class Enemy : MonoBehaviour, I_Enemy
     [SerializeField] private float dot_Product;
     private Vector2 dir;
     [SerializeField] private Vector2 dis;
+
+    [SerializeField] private Vector2 distance_To_Detect;
 
     protected virtual void Start_Enemy()
     {
@@ -36,20 +40,15 @@ public class Enemy : MonoBehaviour, I_Enemy
 
     internal virtual void Dot_Product()
     {
-        dis = (player.transform.position - transform.position).normalized;
-        dot_Product = Vector2.Dot(dir, dis);
-
-        // if (dot_Product >= 0.7 && dot_Product <= 0.8)
-        // {
-        //     
-        // }
+        dis = player.transform.position - transform.position;
+        dot_Product = Vector2.Dot(dir, dis.normalized);
         
         Flip();
     }
 
     internal virtual void Movement()
     {
-        if (is_Lighted) { return; }
+        if (is_Lighted || MathF.Abs(dis.x) > distance_To_Detect.x) { return; }
         
         rigid.linearVelocityX = speed * MathF.Sign(dis.x);
 

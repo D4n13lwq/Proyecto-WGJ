@@ -380,6 +380,7 @@ MonoBehaviour:
   speed: 0.5
   dot_Product: 0
   dis: {x: 0, y: 0}
+  distance_To_Detect: {x: 0, y: 0}
 --- !u!1 &427232938
 GameObject:
   m_ObjectHideFlags: 0
@@ -1296,7 +1297,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 2054025487
-  m_SortingLayer: 2
+  m_SortingLayer: 3
   m_SortingOrder: 0
   m_Sprite: {fileID: 1617004695979393580, guid: 47b8a05ec86da1a4fac83ab63cbe40de, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -1339,9 +1340,10 @@ MonoBehaviour:
   is_Lighted: 0
   player: {fileID: 1431274199}
   distance: 0
-  speed: 0
+  speed: 1
   dot_Product: 0
   dis: {x: 0, y: 0}
+  distance_To_Detect: {x: 4, y: 4}
   anim: {fileID: 0}
 --- !u!1 &1269995310
 GameObject:
@@ -1710,7 +1712,7 @@ SpriteRenderer:
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 347600599
-  m_SortingLayer: 3
+  m_SortingLayer: 5
   m_SortingOrder: 0
   m_Sprite: {fileID: -5004450822578031191, guid: cfa86f50af3620348aa1b6c167fd3ce8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
