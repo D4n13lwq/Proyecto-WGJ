@@ -1,11 +1,13 @@
 using System.Collections;
-using UnityEditorInternal;
 using UnityEngine;
 
 public class AnimationController : MonoBehaviour
 {
     [SerializeField] GroundDetector groundDetector;
     [SerializeField] GameObject falsePlayerDeath;
+    [SerializeField] GameObject gameMusic;
+    [SerializeField] GameObject persecusionMusic;
+    [SerializeField] GameObject DeadMusic;
     Animator animator;
     Rigidbody2D rb;
     SpriteRenderer spriteRenderer;
@@ -38,10 +40,23 @@ public class AnimationController : MonoBehaviour
             rb.linearVelocity = Vector3.zero;
             StartCoroutine(PIPIPI());
         }
+        if (collision.CompareTag("FinalEnemy"))
+        {
+            falsePlayerDeath.transform.position = transform.position;
+            falsePlayerDeath.transform.rotation = transform.rotation;
+            falsePlayerDeath.SetActive(true);
+            spriteRenderer.enabled = false;
+            PlayerMovement.enabled = false;
+            rb.linearVelocity = Vector3.zero;
+            StartCoroutine(PIPIPI());
+        }
     }
 
     IEnumerator PIPIPI()
     {
+        gameMusic.SetActive(false);
+        persecusionMusic.SetActive(false);
+        DeadMusic.SetActive(true);
         yield return new WaitForSeconds(1.2f);
         UiManager.Instance.GameOver();
     }

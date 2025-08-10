@@ -235,6 +235,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   groundDetector: {fileID: 4818892423143091233}
+  falsePlayerDeath: {fileID: 0}
+  gameMusic: {fileID: 0}
+  persecusionMusic: {fileID: 0}
+  DeadMusic: {fileID: 0}
 --- !u!1 &3330990825392237689
 GameObject:
   m_ObjectHideFlags: 0
@@ -295,14 +299,14 @@ GameObject:
   - component: {fileID: 6288396355451116731}
   - component: {fileID: 1234138272511447227}
   - component: {fileID: 3601513184797102897}
-  - component: {fileID: 7265351240439981532}
-  m_Layer: 0
+  - component: {fileID: 3574372760144240758}
+  m_Layer: 3
   m_Name: Light 2D
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!4 &3164915805980443271
 Transform:
   m_ObjectHideFlags: 0
@@ -399,12 +403,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50477fb5a9317048b241b630f9081c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionSize: {x: 4, y: 2}
-  detectionOffset: {x: 5, y: 0.75}
+  detectionSize: {x: 3, y: 2}
+  detectionOffset: {x: 4.5, y: 0.75}
   enemyLayer:
     serializedVersion: 2
     m_Bits: 512
---- !u!114 &7265351240439981532
+--- !u!114 &3574372760144240758
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -416,8 +420,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e50477fb5a9317048b241b630f9081c0, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  detectionSize: {x: 5, y: 4}
-  detectionOffset: {x: 9.6, y: 0.75}
+  detectionSize: {x: 2.5, y: 3}
+  detectionOffset: {x: 7, y: 0.75}
   enemyLayer:
     serializedVersion: 2
-    m_Bits: 512
+    m_Bits: 0

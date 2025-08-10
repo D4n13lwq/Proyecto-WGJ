@@ -78,7 +78,7 @@ public class Enemy : MonoBehaviour, I_Enemy
         
         rigid.gravityScale = 0;
         rigid.linearVelocity = Vector2.zero;
-        coll.isTrigger = true;
+        //coll.isTrigger = true;
         
         foreach (var part in parts)
         {
@@ -96,7 +96,7 @@ public class Enemy : MonoBehaviour, I_Enemy
         is_Lighted = false;
         
         rigid.gravityScale = 1;
-        coll.isTrigger = false;
+        //coll.isTrigger = false;
         
         foreach (var part in parts)
         {
