@@ -4,20 +4,26 @@ using UnityEngine;
 
 public class Enemy : MonoBehaviour, I_Enemy
 {
-    private Rigidbody2D rigid;
-    private Collider2D coll;
+    internal Rigidbody2D rigid;
+    internal Collider2D coll;
     
     public List<GameObject> parts { get; set; } = new();
     
     [SerializeField] private bool is_Lighted;
-    [SerializeField] private GameObject player;
+    [SerializeField] internal GameObject player;
     [SerializeField] private float distance;
     [SerializeField] private float speed;
+    
+    [SerializeField] private float dot_Product;
+    private Vector2 dir;
+    [SerializeField] private Vector2 dis;
 
-    private void Start()
+    protected virtual void Start_Enemy()
     {
         rigid = GetComponent<Rigidbody2D>();
         coll = GetComponent<Collider2D>();
+        
+        dir = transform.right;
         
         for (int i = 0; i < transform.childCount; i++)
         {
@@ -28,21 +34,40 @@ public class Enemy : MonoBehaviour, I_Enemy
         Unlighted();
     }
 
-    private void FixedUpdate()
+    internal virtual void Dot_Product()
     {
-        if (!is_Lighted)
-        {
-            distance = transform.position.x - player.transform.position.x;
-            rigid.linearVelocityX = speed * -MathF.Sign(distance);
+        dis = (player.transform.position - transform.position).normalized;
+        dot_Product = Vector2.Dot(dir, dis);
 
-            foreach (var part in  parts)
-            {
-                part.GetComponent<Rigidbody2D>().linearVelocity = rigid.linearVelocity;
-            }
-        }
+        // if (dot_Product >= 0.7 && dot_Product <= 0.8)
+        // {
+        //     
+        // }
+        
+        Flip();
     }
 
-    public void Lighted()
+    internal virtual void Movement()
+    {
+        if (is_Lighted) { return; }
+        
+        rigid.linearVelocityX = speed * MathF.Sign(dis.x);
+
+        foreach (var part in  parts)
+        {
+            part.GetComponent<Rigidbody2D>().linearVelocity = rigid.linearVelocity;
+        }
+    }
+    
+    private void Flip()
+    {
+        if(dot_Product >= 0) { return; }
+
+        transform.localScale = new(transform.localScale.x * -1, transform.localScale.y);
+        dir *= -1;
+    }
+
+    public virtual void Lighted()
     {
         is_Lighted = true;
         
@@ -56,9 +81,11 @@ public class Enemy : MonoBehaviour, I_Enemy
             part.GetComponent<Collider2D>().enabled = true;
             part.GetComponent<Rigidbody2D>().gravityScale = 1;
         }
+        
+        this.enabled = false;
     }
 
-    public void Unlighted()
+    public virtual void Unlighted()
     {
         is_Lighted = false;
         
